@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "lib": ["dom"],
+        "jsx": "react",
+        "jsxFactory": "h",
+        "declaration": true,
+        "outDir": "lib",
+        "strict": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "rootDir": "src",
+        "typeRoots": [
+            "node_modules/@types",
+            "node_modules/web-ext-types"
+        ]
+    }
+}
