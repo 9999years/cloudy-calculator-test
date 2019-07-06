@@ -13,12 +13,8 @@
     "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.0",
-    "@babel/plugin-proposal-class-properties": "^7.5.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.1",
     "@babel/preset-env": "^7.5.0",
-    "@babel/preset-typescript": "^7.3.3",
     "@types/stylus": "^0.48.31",
     "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
@@ -34,10 +30,8 @@
     "prop-loader": "^1.0.0",
     "raw-loader": "^3.0.0",
     "spawn-loader": "^6.0.0",
-    "style-loader": "^0.23.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-    "typescript": "^3.5.2",
     "webextension-polyfill": "^0.4.0",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"

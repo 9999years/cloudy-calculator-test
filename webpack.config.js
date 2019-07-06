@@ -2,7 +2,6 @@ const path = require('path')
 const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const InertEntryPlugin = require('inert-entry-webpack-plugin')
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
@@ -43,14 +42,19 @@ module.exports = {
       {
         test: /\.styl$/,
         use: [
-          'file-loader',
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[hash].css',
+            },
+          },
           'extract-loader',
           'css-loader',
           'stylus-loader',
         ]
       },
       {
-        test: /\/index\.(js|ts|jsx|tsx)$/,
+        test: /\/index\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: [{
           loader: 'spawn-loader',
@@ -60,22 +64,24 @@ module.exports = {
         }]
       },
       {
-        test: /\.(js|ts|jsx|tsx)$/,
+        test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: [
           {
             loader: 'babel-loader',
             options: {
-              "presets": [
-                ["@babel/env", {"modules": false}],
-                "@babel/typescript"
-              ],
-              "plugins": [
-                "@babel/proposal-class-properties",
-                "@babel/proposal-object-rest-spread"
+              presets: [
+                ['@babel/preset-env', { modules: false }]
               ]
             }
           },
+          // Ensure babel-polyfill is imported
+          // Normally, this would just be an entry point, but relying on
+          // spawn-loader is preventing us from doing that.
+          {
+            loader: 'imports-loader',
+            query: '__babelPolyfill=babel-polyfill'
+          }
         ]
       },
       {
@@ -87,6 +93,11 @@ module.exports = {
           }
         }
       },
+      // Workaround for https://github.com/webpack/webpack/issues/5828
+      {
+        test: require.resolve('webextension-polyfill'),
+        use: 'imports-loader?browser=>undefined'
+      }
     ]
   },
   plugins: [
