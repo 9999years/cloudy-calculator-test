@@ -5,32 +5,32 @@
   "description": "{{prop-loader?description!../package.json}}",
   "author": "{{prop-loader?author!../package.json}}",
   "icons": {
-        "16":   "{{./icon/icon-16.png}}",
-        "32":   "{{./icon/icon-32.png}}",
-        "64":   "{{./icon/icon-64.png}}",
-        "96":   "{{./icon/icon-96.png}}",
-        "128":  "{{./icon/icon-128.png}}",
-        "180":  "{{./icon/icon-180.png}}",
-        "192":  "{{./icon/icon-192.png}}",
-        "196":  "{{./icon/icon-196.png}}",
-        "256":  "{{./icon/icon-256.png}}",
-        "512":  "{{./icon/icon-512.png}}",
-        "1024": "{{./icon/icon-1024.png}}"
+        "16":   "./icon/icon-16.png",
+        "32":   "./icon/icon-32.png",
+        "64":   "./icon/icon-64.png",
+        "96":   "./icon/icon-96.png",
+        "128":  "./icon/icon-128.png",
+        "180":  "./icon/icon-180.png",
+        "192":  "./icon/icon-192.png",
+        "196":  "./icon/icon-196.png",
+        "256":  "./icon/icon-256.png",
+        "512":  "./icon/icon-512.png",
+        "1024": "./icon/icon-1024.png"
   },
   "browser_action": {
-    "default_popup": "{{./popup.html}}",
+    "default_popup": "./popup.html",
     "default_icon": {
-        "16":   "{{./icon/icon-16.png}}",
-        "32":   "{{./icon/icon-32.png}}",
-        "64":   "{{./icon/icon-64.png}}",
-        "96":   "{{./icon/icon-96.png}}",
-        "128":  "{{./icon/icon-128.png}}",
-        "180":  "{{./icon/icon-180.png}}",
-        "192":  "{{./icon/icon-192.png}}",
-        "196":  "{{./icon/icon-196.png}}",
-        "256":  "{{./icon/icon-256.png}}",
-        "512":  "{{./icon/icon-512.png}}",
-        "1024": "{{./icon/icon-1024.png}}"
+        "16":   "./icon/icon-16.png",
+        "32":   "./icon/icon-32.png",
+        "64":   "./icon/icon-64.png",
+        "96":   "./icon/icon-96.png",
+        "128":  "./icon/icon-128.png",
+        "180":  "./icon/icon-180.png",
+        "192":  "./icon/icon-192.png",
+        "196":  "./icon/icon-196.png",
+        "256":  "./icon/icon-256.png",
+        "512":  "./icon/icon-512.png",
+        "1024": "./icon/icon-1024.png"
     }
   }
 }
